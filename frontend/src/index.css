@@ -1,1 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+@theme {
+     --color-primary: #181A2A;
+     --color-secondary: #4B6BFB;
+     --color-accent: #E8E8EA;
+}
+
+/* .section-container{
+  @apply container max-w-screen-xl mx-auto py-6 px-4;
+} */
+
+/* .dark{
+  @apply bg-gray-900 text-white;
+} */
