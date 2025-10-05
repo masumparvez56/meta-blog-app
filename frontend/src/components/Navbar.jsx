@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <nav className='bg-white shadow-md'>
             {/* desktop menu & mobile button */}
-            <div className='container max-w-7xl mx-auto px-4 py-3 flex justify-between items-center gap-4'>
+            <div className='section-container flex justify-between items-center gap-4'>
                 {/* logo */}
                 <div>
                     <a href="/">
