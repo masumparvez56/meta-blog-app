@@ -39,14 +39,14 @@ const Contact = () => {
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="message" className='block text-gray-700 text-sm font-bold mb-2'>Message</label>
-                                <textarea 
-                                placeholder='Enter Your Message' rows="4" className='w-full px-4 py-2 rounded-lg border border-accent text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500'></textarea>
+                                <textarea
+                                    placeholder='Enter Your Message' rows="4" className='w-full px-4 py-2 rounded-lg border border-accent text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500'></textarea>
                             </div>
 
                             <div>
                                 <button
-                                type='submit'
-                                className='w-full bg-secondary text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'>Send Message</button>
+                                    type='submit'
+                                    className='w-full bg-secondary text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'>Send Message</button>
                             </div>
                         </form>
                     </div>

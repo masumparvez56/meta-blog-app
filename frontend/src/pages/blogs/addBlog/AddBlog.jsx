@@ -1,19 +1,36 @@
 import React from 'react';
 import InputField from './InputField';
 import TextAreaField from './TextAreaField';
+import { useForm } from "react-hook-form"
 
 const AddBlog = () => {
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = (data) => {
+        const blogData = {
+            title: data.title,
+            description: data.description,
+            image: data.image,
+            author: {
+                name: data.authorName,
+                image: data.authorImage
+            }
+        }
+
+        console.log(blogData)
+    }
     return (
         <div className='section-container py-16 mt-12'>
             <h2 className='text-2xl font-bold mb-6'>Add New Blog</h2>
 
             {/* form */}
             <div>
-                <form className='bg-white p-6 rounded-lg max-w-3xl shadow-md space-y-4'>
+                <form onSubmit={handleSubmit(onSubmit)} className='bg-white p-6 rounded-lg max-w-3xl shadow-md space-y-4'>
                     <InputField
                         label="Blog Title"
                         id="title"
                         type="text"
+                        register={register("title", { required: true })}
                         placeholder="Blog Title"
                     />
                     {/* text area */}
@@ -21,6 +38,7 @@ const AddBlog = () => {
                         label="Blog Description"
                         id="description"
                         type="text"
+                        register={register("description", { required: true })}
                         placeholder="Blog Description"
                     />
 
@@ -28,6 +46,7 @@ const AddBlog = () => {
                         label="Author Name"
                         id="authorName"
                         type="text"
+                        register={register("authorName", { required: true })}
                         placeholder="Author Name"
                     />
 
@@ -35,6 +54,7 @@ const AddBlog = () => {
                         label="Author Image URL"
                         id="authorImage"
                         type="url"
+                        register={register("authorImage", { required: true })}
                         placeholder="Author Image URL"
                     />
 
@@ -42,6 +62,7 @@ const AddBlog = () => {
                         label="Blog Image URL"
                         id="image"
                         type="url"
+                        register={register("image", { required: true })}
                         placeholder="Blog Image URL"
                     />
 
