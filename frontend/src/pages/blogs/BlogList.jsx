@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
 
 const BlogList = () => {
-     const [searchTerm] = useState('') //TODO: use blog contest
+    const [searchTerm] = useState('') //TODO: use blog contest
     const [blogs, setBlogs] = useState([]);
     const [showBlogs, setShowBlogs] = useState(6)
     useEffect(() => {

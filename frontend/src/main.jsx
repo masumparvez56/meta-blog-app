@@ -11,6 +11,9 @@ import Blogs from './pages/blogs/Blogs.jsx';
 import About from './pages/about/About.jsx';
 import Contact from './pages/contact/Contact.jsx';
 import AddBlog from './pages/blogs/addBlog/AddBlog.jsx';
+import ManageBlogs from './pages/blogs/manageBlog/ManageBlogs.jsx';
+import UpdateBlog from './pages/blogs/manageBlog/UpdateBlog.jsx';
+import BlogDetails from './pages/blogs/BlogDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,8 +29,20 @@ const router = createBrowserRouter([
         element: <Blogs/>
       },
       {
+        path: "/blogs/:id",
+        element: <BlogDetails/>
+      },
+      {
         path: "/add-blog",
         element: <AddBlog/>
+      },
+      {
+        path: "/manage-blog",
+        element: <ManageBlogs/>
+      },
+      {
+        path: "/blogs/edit/:id",
+        element: <UpdateBlog/>
       },
       {
         path: "/about",

@@ -1,9 +1,9 @@
 import React from 'react';
-import InputField from './InputField';
-import TextAreaField from './TextAreaField';
-import { useForm } from "react-hook-form"
+import { useForm } from 'react-hook-form';
+import InputField from '../addBlog/InputField';
+import TextAreaField from '../addBlog/TextAreaField';
 
-const AddBlog = () => {
+const UpdateBlog = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
@@ -21,7 +21,7 @@ const AddBlog = () => {
     };
     return (
         <div className='section-container py-16 mt-12'>
-            <h2 className='text-2xl font-bold mb-6'>Add New Blog</h2>
+            <h2 className='text-2xl font-bold mb-6'>Update Blog</h2>
 
             {/* form */}
             <div>
@@ -72,7 +72,7 @@ const AddBlog = () => {
                     <div>
                         <button
                             type='submit'
-                            className='w-full bg-secondary text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'>Add Blog</button>
+                            className='w-full bg-secondary text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'>Update Blog</button>
                     </div>
                 </form>
             </div>
@@ -80,4 +80,4 @@ const AddBlog = () => {
     );
 };
 
-export default AddBlog;
+export default UpdateBlog;
