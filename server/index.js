@@ -6,6 +6,10 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 
 
+// routes
+const blogRoutes = require('./src/routes/blog.routes')
+app.use('/blogs', blogRoutes)
+
 // mongoose configuration
 async function main() {
     await mongoose.connect(process.env.DB_URL);
