@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 require('dotenv').config()
 
+// middleware
+app.use(express.json())
 
 // routes
 const blogRoutes = require('./src/routes/blog.routes')
