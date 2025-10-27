@@ -1,33 +1,22 @@
 const express = require('express');
 const Blog = require('../models/blog.model');
+const { getAllBlogs, getBlogById, postANewBlog, deleteABlogById, updateABlogById } = require('../controllers/blog.controllers');
 
 const router = express.Router();
 
 // get all blogs
-router.get('/', async (req, res) => {
-    try {
-        const blogs = await Blog.find().sort({createdAt: -1})
-        res.status(200).send({ message: "Blogs fetched successfully", blogs })
-    } catch (error) {
-      console.error("Error fetching all blogs", error)
-        res.status(500).send({ message: "Error fetching all blogs", error })  
-    }
-})
+router.get('/', getAllBlogs)
+
+// get a single blog by id
+router.get('/:id', getBlogById)
 
 // post a new blog 
-router.post('/add-post', async (req, res) => {
-    try {
-        const newBlog = new Blog({
-          ...req.body
-        })
+router.post('/add-post', postANewBlog)
 
-        const blog = await newBlog.save();
-        res.status(200).send({ message: "post created successfully", blog })
-    } catch (error) {
-        console.error("Error Creating a new blog", error)
-        res.status(500).send({ message: "Error Creating a new blog", error })
-    }
+// delete a blog
+router.delete('/:id', deleteABlogById)
 
-})
+// update a blog
+router.put('/:id', updateABlogById)
 
 module.exports = router;
