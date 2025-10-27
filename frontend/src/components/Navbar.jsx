@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Search from './Search';
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { HiBars3CenterLeft } from "react-icons/hi2";
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const {} = useContext()
     const toggleMobileMenu = () => setIsMenuOpen(!isMenuOpen)
 
     // TODO: use context here instead
