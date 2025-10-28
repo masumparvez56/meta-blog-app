@@ -4,16 +4,17 @@ import Search from './Search';
 import { FaMoon, FaSun } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { HiBars3CenterLeft } from "react-icons/hi2";
+import { ThemeContext } from '../context/ThemeContext';
 
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const {} = useContext()
+    const {darkMode, setDarkMode} = useContext(ThemeContext)
     const toggleMobileMenu = () => setIsMenuOpen(!isMenuOpen)
 
-    // TODO: use context here instead
-    const [isDarkMode, setIsDarkMode] = useState(false)
-    const toggleDarkMode = () => setIsDarkMode(!isDarkMode)
+    // use context here instead
+    // const [isDarkMode, setIsDarkMode] = useState(false)
+    // const toggleDarkMode = () => setIsDarkMode(!isDarkMode)
     return (
         <nav className='bg-white shadow-md'>
             {/* desktop menu & mobile button */}
@@ -56,10 +57,10 @@ const Navbar = () => {
                     </div>
 
                     {/* color switcher */}
-                    <div className={`w-14 h-8 flex items-center bg-[#E8E8EA] rounded-full p-1 cursor-pointer transition-colors duration-300 ${isDarkMode ? "justify-end" : "justify-start"}`}>
-                        <button onClick={toggleDarkMode} className='w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center transition-transform duration-300'>
+                    <div className={`w-14 h-8 flex items-center bg-[#E8E8EA] rounded-full p-1 cursor-pointer transition-colors duration-300 ${darkMode ? "justify-end" : "justify-start"}`}>
+                        <button onClick={() => setDarkMode((darkMode) => !darkMode)} className='w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center transition-transform duration-300'>
                             {
-                                isDarkMode ? <FaMoon className='text-gray-500' /> : <FaSun className='text-yellow-500' />
+                                darkMode ? <FaMoon className='text-gray-500' /> : <FaSun className='text-yellow-500' />
                             }
                         </button>
                     </div>

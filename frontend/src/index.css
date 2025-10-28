@@ -17,6 +17,6 @@ body {
   @apply container max-w-7xl mx-auto px-4 py-3;
 }
 
-/* .dark{
+.dark{
   @apply bg-gray-900 text-white;
-} */
+}
