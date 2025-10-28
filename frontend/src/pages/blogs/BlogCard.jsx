@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const BlogCard = ({blog}) => {
-    console.log(blog)
     return (
         <div className='border border-accent rounded-lg p-4 bg-white shadow-md'>
            <Link to={`/blogs/${blog?._id}`}>
