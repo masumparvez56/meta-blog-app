@@ -1,17 +1,21 @@
 import React from 'react';
+import Reveal from '../../animation/Reveal';
 
 const About = () => {
     return (
         <section className='pt-24 pb-12'>
             <div className='section-container'>
                 {/* hero */}
-                <div className='text-center mb-20'>
-                    <h1 className='text-4xl font-semibold'>About Us</h1>
-                    <p className='mt-5'>Learn more about our company, our mission, and the team that drives us forward. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nam libero obcaecati. Earum veniam debitis, repellendus omnis fugit sequi. Quia quaerat voluptatem, dolores vel officiis nulla corrupti nemo dolorem omnis?</p>
-                </div>
+                <Reveal>
+                    <div className='text-center mb-20'>
+                        <h1 className='text-4xl font-semibold'>About Us</h1>
+                        <p className='mt-5'>Learn more about our company, our mission, and the team that drives us forward. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nam libero obcaecati. Earum veniam debitis, repellendus omnis fugit sequi. Quia quaerat voluptatem, dolores vel officiis nulla corrupti nemo dolorem omnis?</p>
+                    </div>
+                </Reveal>
 
                 {/* mission */}
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20'>
+                <Reveal>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20'>
                     <div>
                         <h2 className='text-3xl font-semibold mb-4'>Our Mission</h2>
                         <p className='mb-4'>We are dedicated to providing the best solutions for our customers by focusing on quality, innovation, and customer satisfaction. Our mission is to help you succeed in the digital age by delivering reliable and impactful digital products and services.</p>
@@ -22,9 +26,11 @@ const About = () => {
                         <img src="https://images.unsplash.com/photo-1521316730702-829a8e30dfd0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className='w-full md:h-96 rounded-lg shadow-lg hover:scale-95 transition-all duration-200' />
                     </div>
                 </div>
+                </Reveal>
 
                 {/* vission */}
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20'>
+                <Reveal>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20'>
                     <div className='order-1 md:order-2'>
                         <h2 className='text-3xl font-semibold mb-4'>Our Vission</h2>
                         <p className='mb-4'>We envision a world where businesses can seamlessly transition into the digital landscape, gaining the tools and knowledge they need to thrive. Our vision is to create innovative solutions that empower businesses globally.</p>
@@ -34,9 +40,11 @@ const About = () => {
                         <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className='w-full md:h-96 rounded-lg shadow-lg hover:scale-95 transition-all duration-200' />
                     </div>
                 </div>
+                </Reveal>
 
                 {/* team section */}
-                <div>
+               <Reveal>
+                 <div>
                     <h2 className='text-3xl text-center font-semibold mb-12'>Meet Our Team</h2>
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
                         <div className='bg-white p-6 rounded-lg shadow-lg text-center hover:scale-95 transition-all duration-200 cursor-pointer'>
@@ -61,16 +69,19 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+               </Reveal>
 
                 {/* banner for contact info */}
 
-                <div className='py-12 bg-secondary text-white mt-16 rounded-md h-full flex items-center justify-center text-center'>
+                <Reveal>
+                    <div className='py-12 bg-secondary text-white mt-16 rounded-md h-full flex items-center justify-center text-center'>
                     <div className='space-y-3 p-4'>
                         <h2 className='text-2xl font-bold text-white'>Want to Work with Us</h2>
                         <p className='text-lg text-white'> Get in touch and let's build something amazing together</p>
                         <button className='bg-white hover:bg-primary/30 hover:text-white text-secondary font-bold py-2 px-8 rounded-full'>Contact Us</button>
                     </div>
                 </div>
+                </Reveal>
             </div>
         </section>
     );

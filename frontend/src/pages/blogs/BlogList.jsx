@@ -5,12 +5,16 @@ import { BlogContext } from '../../context/BlogContext';
 const BlogList = () => {
     const {searchTerm} = useContext(BlogContext)
 
+    const [isLoading, setIsLoading] = useState(true)
     const [blogs, setBlogs] = useState([]);
     const [showBlogs, setShowBlogs] = useState(6)
     useEffect(() => {
         fetch('http://localhost:5000/blogs')
         .then(res => res.json())
-        .then(data => setBlogs(data.blogs))
+        .then(data =>{
+          setBlogs(data.blogs) 
+          setIsLoading(false) 
+        })
         .catch(error => console.error("Error fetching blog data:" + error))
     }, [])
 
@@ -25,6 +29,8 @@ const BlogList = () => {
     const handleMoreBlog = () => {
        setShowBlogs(prev => prev + 3) 
     }
+
+    if(isLoading) return <div className='h-20'>Loading...</div>
     return (
         <div className=' container mx-auto'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>

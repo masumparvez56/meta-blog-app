@@ -1,5 +1,6 @@
 import React from 'react';
 import contactImg from '../../assets/contact-animation.gif'
+import Reveal from '../../animation/Reveal';
 
 const Contact = () => {
     return (
@@ -8,7 +9,8 @@ const Contact = () => {
                 <h2 className='text-3xl font-semibold text-center mb-12'>Get In Touch</h2>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-8'>
-                    <div className='space-y-4'>
+                    <Reveal>
+                        <div className='space-y-4'>
                         <img src={contactImg} alt="" className='w-44' />
                         <h3 className='text-xl font-semibold'>Contact Information</h3>
                         <p>Feel free to reach out to us through the form or the contact information below:</p>
@@ -16,8 +18,10 @@ const Contact = () => {
                         <p><strong>Phone:</strong> +8801234567899</p>
                         <p><strong>Address:</strong> 1234 street Name, City, Country</p>
                     </div>
+                    </Reveal>
 
-                    <div>
+                    <Reveal>
+                        <div>
                         <form className='bg-white p-6 rounded-lg shadow-md'>
                             <div className='mb-4'>
                                 <label htmlFor="name" className='block text-gray-700 text-sm font-bold mb-2'>Name</label>
@@ -50,6 +54,7 @@ const Contact = () => {
                             </div>
                         </form>
                     </div>
+                    </Reveal>
                 </div>
             </div>
 
